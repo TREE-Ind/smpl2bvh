@@ -109,7 +109,7 @@ def smpl2bvh(model_path:str, poses:str, output:str, mirror:bool,
             poses = pickle.load(f)
             rots = poses["smpl_poses"] # (N, 72)
             rots = rots.reshape(rots.shape[0], -1, 3) # (N, 24, 3)
-            scaling = 1
+            scaling = (1,0)
             trans = poses["smpl_trans"]  # (N, 3)
     
     else:
